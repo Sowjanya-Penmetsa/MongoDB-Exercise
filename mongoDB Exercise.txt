@@ -1,0 +1,859 @@
+ use Hotel
+switched to db Hotel
+> show collections
+
+--------Employees Collection(object) created this by using Mongodb compass(GUI)---------
+
+Employees
+
+----------Insertion into employees------
+
+> db.Employees.insertMany([
+... {
+... Firstname:'jhvhjf',
+... Lastanme:'hgvhfg',
+... Title:'hjfgjh',
+... Notes:'fjghjhg'
+... },
+... {
+... Firstname:'dfhgjhdf',
+... Lastname:'dshfjdh',
+... Title:'hfghdg',
+... Notes:'jsdfhjdhf'
+... }
+... ])
+------------------------------------------
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("5f08630c77388a80967b9ac3"),
+                ObjectId("5f08630c77388a80967b9ac4")
+        ]
+}
+-----------------------------------------------
+--------------Displaying the contents of Employees collection-----------
+
+> db.Employees.find().pretty()
+
+------------(In This first record i inserted by using the MongoDb Compass(GUI)  second and third by using the mongodb Shell)--------------
+
+{
+
+
+        "_id" : ObjectId("5f085e58cb1287083073b237"),
+        "Firstname" : "shghs",
+        "Lastname" : "sdfjhdshfj",
+        "title" : "hgfdj",
+        "notes" : "jdhfdhfk"
+}
+{
+        "_id" : ObjectId("5f08630c77388a80967b9ac3"),
+        "Firstname" : "jhvhjf",
+        "Lastanme" : "hgvhfg",
+        "Title" : "hjfgjh",
+        "Notes" : "fjghjhg"
+}
+{
+        "_id" : ObjectId("5f08630c77388a80967b9ac4"),
+        "Firstname" : "dfhgjhdf",
+        "Lastname" : "dshfjdh",
+        "Title" : "hfghdg",
+        "Notes" : "jsdfhjdhf"
+}
+
+-------------creation of collection(object) Customers------------------
+
+> db.createCollection('Customers')
+{ "ok" : 1 }
+
+--------------Insertion of data into Customers Collection--------
+
+> db.Customers.insertMany([
+... {
+... AccountNumber:1,
+... FirstName:'fjjdsjg',
+... LastName:'hjdsfhs',
+... PhoneNumber:765873465,
+... EmergencyName:'ghkjdfg',
+... EmergencyNo:555,
+... Notes:'sdhfhjf'
+... },
+... {
+... AccountNumber:2,
+... FirstName:'fjjsjg',
+... LastName:'hdsfhs',
+... PhoneNumber:765873,
+... EmergencyName:'ghkjfg',
+... EmergencyNo:655,
+... Notes:'sdhfhjf'
+... },
+... {
+... AccountNumber:3,
+... FirstName:'jdsjg',
+... LastName:'dsfhs',
+... PhoneNumber:5873465,
+... EmergencyName:'ghkjdfg',
+... EmergencyNo:666,
+... Notes:'sdhfhjf'
+... }
+... ])
+-------------------------------------------------------------------------
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("5f08679277388a80967b9ac5"),
+                ObjectId("5f08679277388a80967b9ac6"),
+                ObjectId("5f08679277388a80967b9ac7")
+        ]
+}
+-----------------------------------------------------------------------------
+
+> show collections
+Customers
+Employees
+------------------------Displaying the contents of Customers collections---------------
+> db.Customers.find().pretty()
+{
+        "_id" : ObjectId("5f08679277388a80967b9ac5"),
+        "AccountNumber" : 1,
+        "FirstName" : "fjjdsjg",
+        "LastName" : "hjdsfhs",
+        "PhoneNumber" : 765873465,
+        "EmergencyName" : "ghkjdfg",
+        "EmergencyNo" : 555,
+        "Notes" : "sdhfhjf"
+}
+{
+        "_id" : ObjectId("5f08679277388a80967b9ac6"),
+        "AccountNumber" : 2,
+        "FirstName" : "fjjsjg",
+        "LastName" : "hdsfhs",
+        "PhoneNumber" : 765873,
+        "EmergencyName" : "ghkjfg",
+        "EmergencyNo" : 655,
+        "Notes" : "sdhfhjf"
+}
+{
+        "_id" : ObjectId("5f08679277388a80967b9ac7"),
+        "AccountNumber" : 3,
+        "FirstName" : "jdsjg",
+        "LastName" : "dsfhs",
+        "PhoneNumber" : 5873465,
+        "EmergencyName" : "ghkjdfg",
+        "EmergencyNo" : 666,
+        "Notes" : "sdhfhjf"
+}
+
+-------------creation of the Collection(object) RoomStatus---------
+>
+> db.createCollection('RoomStatus')
+{ "ok" : 1 }
+
+--------Inserting the data into RoomStatus------------------
+
+> db.RoomStatus.insertMany([
+... {
+... RoomStatus:'available',
+... Notes:'jdhfjsdhf'
+... },
+... {
+... RoomStatus:'vacant',
+... Notes:'djshfjdshf'
+... },
+... {
+... RoomStatus:'reserved',
+... Notes:'sdkjfhjks'
+... }
+... ])
+-----------------------------------------------------------------------
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("5f08698a77388a80967b9ac8"),
+                ObjectId("5f08698a77388a80967b9ac9"),
+                ObjectId("5f08698a77388a80967b9aca")
+        ]
+}
+-----------------------------------------------------------------------
+> show collections
+Customers
+Employees
+RoomStatus
+--------------------------------------------------------------------------
+------------------Displaying the contents of RoomStatus-----------------
+
+> db.RoomStatus.find().pretty()
+{
+        "_id" : ObjectId("5f08698a77388a80967b9ac8"),
+        "RoomStatus" : "available",
+        "Notes" : "jdhfjsdhf"
+}
+{
+        "_id" : ObjectId("5f08698a77388a80967b9ac9"),
+        "RoomStatus" : "vacant",
+        "Notes" : "djshfjdshf"
+}
+{
+        "_id" : ObjectId("5f08698a77388a80967b9aca"),
+        "RoomStatus" : "reserved",
+        "Notes" : "sdkjfhjks"
+}
+
+--------------Creation of collection(object) RoomTypes-------------------------
+
+> db.createCollection('RoomTypes')
+{ "ok" : 1 }
+
+---------------------------------------------------------------------------
+
+------------------Insertion of Data into RoomTypes---------------------
+
+>  db.RoomTypes.insertMany([
+... {
+... RoomType:'triple',
+... Notes:'hjh'
+... },
+... {
+... RoomType:'double',
+... Notes:'fhdkjh'
+... },
+... {
+... RoomType:'single',
+... Notes:'djhfjhd'
+... }
+... ])
+
+-------------------------------------------------------------------------------
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("5f086ac277388a80967b9acb"),
+                ObjectId("5f086ac277388a80967b9acc"),
+                ObjectId("5f086ac277388a80967b9acd")
+        ]
+}
+-------------------------------------------------------------------------------
+-------------------Displaying the contents of RoomTypes------------------------
+
+> db.RoomTypes.find().pretty()
+{
+        "_id" : ObjectId("5f086ac277388a80967b9acb"),
+        "RoomType" : "triple",
+        "Notes" : "hjh"
+}
+{
+        "_id" : ObjectId("5f086ac277388a80967b9acc"),
+        "RoomType" : "double",
+        "Notes" : "fhdkjh"
+}
+{
+        "_id" : ObjectId("5f086ac277388a80967b9acd"),
+        "RoomType" : "single",
+        "Notes" : "djhfjhd"
+}
+
+--------------------Creation of Collection(object) BedTypes-----------------------------
+
+> db.createCollection('BedTypes')
+{ "ok" : 1 }
+
+------------------------Insertion of data into BedTypes------------------------------
+
+ db.BedTypes.insertMany([
+... {
+... BedType:'baby',
+... Notes:'sdhfj'
+... },
+... {
+... BedType:'queen',
+... Notes:'sjdhfjds'
+... },
+... {
+... BedType:'king',
+... Notes:'dsjhfjksd'
+... }
+... ])
+
+-------------------------------------------------------------------------------------------
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("5f086d3d77388a80967b9ace"),
+                ObjectId("5f086d3d77388a80967b9acf"),
+                ObjectId("5f086d3d77388a80967b9ad0")
+        ]
+}
+---------------------------------------------------------------------------------------------
+> show collections
+BedTypes
+Customers
+Employees
+RoomStatus
+RoomTypes
+---------------------------------------------------------------------------------------------
+---------------------------Displaying the contents of BedTypes---------------------------------
+
+> db.BedTypes.find().pretty()
+{
+        "_id" : ObjectId("5f086d3d77388a80967b9ace"),
+        "BedType" : "baby",
+        "Notes" : "sdhfj"
+}
+{
+        "_id" : ObjectId("5f086d3d77388a80967b9acf"),
+        "BedType" : "queen",
+        "Notes" : "sjdhfjds"
+}
+{
+        "_id" : ObjectId("5f086d3d77388a80967b9ad0"),
+        "BedType" : "king",
+        "Notes" : "dsjhfjksd"
+}
+
+------------------creation of collection(object) Rooms----------------------------------------
+
+> db.createCollection('Rooms')
+{ "ok" : 1 }
+
+------------------------------Insertion of data into Rooms-------------------------------------
+
+ db.Rooms.insertMany([
+... {
+... RoomNumber:1,
+... RoomType:
+... {
+...  RoomType:'triple',
+...  Notes:'hjh'
+... },
+... BedType:
+... {
+...  BedType:'queen',
+...  Notes:'sjdhfjds'
+... },
+... Rate:560,
+... RoomStatus:
+... {
+...  RoomStatus:'available',
+...  Notes:'jdhfjsdhf'
+... },
+... Notes:'sdjfjkds'
+... },
+
+... {
+... RoomNumber:2,
+... RoomType:
+... {
+...  RoomType:'double',
+...  Notes:'fhdkjh'
+... },
+... BedType:
+... {
+...  BedType:'baby',
+...  Notes:'sdhfj'
+... },
+... Rate:500,
+... RoomStatus:
+... {
+...  RoomStatus:'vacant',
+...  Notes:'djshfjdshf'
+... },
+... Notes:'jhfjhd'
+... },
+
+... {
+... RoomNumber:3,
+... RoomType:
+... {
+...  RoomType:'single',
+...  Notes:'djhfjhd'
+... },
+... BedType:
+... {
+...  BedType:'king',
+...  Notes:'dsjhfjksd'
+... },
+... Rate:400,
+... RoomStatus:
+... {
+...  RoomStatus:'reserved',
+...  Notes:'sdkjfhjks'
+... },
+... Notes:'sdjhfjd'
+... }
+... ])
+--------------------------------------------------------------------
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("5f0892f577388a80967b9adb"),
+                ObjectId("5f0892f577388a80967b9adc"),
+                ObjectId("5f0892f577388a80967b9add")
+        ]
+}
+
+----------------------------------------------------------------------------------------------------
+------------------------Displaying the contents of Rooms----------------------------
+
+>  db.Rooms.find().pretty()
+{
+        "_id" : ObjectId("5f0892f577388a80967b9adb"),
+        "RoomNumber" : 1,
+        "RoomType" : {
+                "RoomType" : "triple",
+                "Notes" : "hjh"
+        },
+        "BedType" : {
+                "BedType" : "queen",
+                "Notes" : "sjdhfjds"
+        },
+        "Rate" : 560,
+        "RoomStatus" : {
+                "RoomStatus" : "available",
+                "Notes" : "jdhfjsdhf"
+        },
+        "Notes" : "sdjfjkds"
+}
+{
+        "_id" : ObjectId("5f0892f577388a80967b9adc"),
+        "RoomNumber" : 2,
+        "RoomType" : {
+                "RoomType" : "double",
+                "Notes" : "fhdkjh"
+        },
+        "BedType" : {
+                "BedType" : "baby",
+                "Notes" : "sdhfj"
+        },
+        "Rate" : 500,
+        "RoomStatus" : {
+                "RoomStatus" : "vacant",
+                "Notes" : "djshfjdshf"
+        },
+        "Notes" : "jhfjhd"
+}
+{
+        "_id" : ObjectId("5f0892f577388a80967b9add"),
+        "RoomNumber" : 3,
+        "RoomType" : {
+                "RoomType" : "single",
+                "Notes" : "djhfjhd"
+        },
+        "BedType" : {
+                "BedType" : "king",
+                "Notes" : "dsjhfjksd"
+        },
+        "Rate" : 400,
+        "RoomStatus" : {
+                "RoomStatus" : "reserved",
+                "Notes" : "sdkjfhjks"
+        },
+        "Notes" : "sdjhfjd"
+}
+
+--------------creation of Collection(object) Payments-------------
+
+db.createCollection('Payments')
+{ "ok" : 1 }
+
+------------------------Insertion of data into Payments------------------
+
+ db.Payments.insertMany([
+... {
+... EmployeeId:
+... {
+...  Firstname:'jhvhjf',
+...  Lastanme:'hgvhfg',
+...  Title:'hjfgjh',
+...  Notes:'fjghjhg'
+... },
+... PaymentDate:'20-03-2016',
+... AccountNumber:
+... {
+... AccountNumber:1,
+...  FirstName:'fjjdsjg',
+...  LastName:'hjdsfhs',
+...  PhoneNumber:765873465,
+...  EmergencyName:'ghkjdfg',
+...  EmergencyNo:555,
+...  Notes:'sdhfhjf'
+... },
+... FirstDateOccupied:'23-03-2016',
+... LastDateOccupied:'25-03-2016',
+... TotalDays:3,
+... AmountCharged:500,
+... TaxRate:25,
+... TaxAmount:30,
+... PaymentTotal:530,
+... Notes:'kdhfkjd'
+... },
+...
+... {
+... EmployeeId:
+... {
+...  Firstname:'dfhgjhdf',
+...  Lastname:'dshfjdh',
+...  Title:'hfghdg',
+...  Notes:'jsdfhjdhf'
+... },
+... PaymentDate:'09-08-2009',
+... AccountNumber:
+... {
+...  AccountNumber:2,
+...  FirstName:'fjjsjg',
+...  LastName:'hdsfhs',
+...  PhoneNumber:765873,
+...  EmergencyName:'ghkjfg',
+...  EmergencyNo:655,
+...  Notes:'sdhfhjf'
+... },
+... FirstDateOccupied:'09-08-2009',
+... LastDateOccupied:'11-08-2009',
+... TotalDays:3,
+... AmountCharged:600,
+... TaxRate:30,
+... TaxAmount:60,
+... PaymentTotal:660,
+... Notes:'sjgfjd'
+... },
+...
+... {
+... EmployeeId:
+... {
+...  Firstname:'jhvhjf',
+...  Lastanme:'hgvhfg',
+...  Title:'hjfgjh',
+...  Notes:'fjghjhg'
+... },
+... PaymentDate:'09-09-2009',
+... AccountNumber:
+... {
+...  AccountNumber:3,
+...  FirstName:'jdsjg',
+...  LastName:'dsfhs',
+...  PhoneNumber:5873465,
+...  EmergencyName:'ghkjdfg',
+...  EmergencyNo:666,
+...  Notes:'sdhfhjf'
+... },
+... FirstDateOccupied:'10-09-2009',
+... LastDateOccupied:'11-09-2009',
+... TotalDays:2,
+... AmountCharged:300,
+... TaxRate:20,
+... TaxAmount:40,
+... PaymentTotal:340,
+... Notes:'djhkjhgkd'
+... }
+... ])
+
+------------------------------------------------------------------------------
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("5f08991477388a80967b9ade"),
+                ObjectId("5f08991477388a80967b9adf"),
+                ObjectId("5f08991477388a80967b9ae0")
+        ]
+}
+
+-----------------------------------------------------------------------------------
+
+-----------------Displaying the contents of Payments-------------------------------
+
+db.Payments.find().pretty()
+{
+        "_id" : ObjectId("5f08991477388a80967b9ade"),
+        "EmployeeId" : {
+                "Firstname" : "jhvhjf",
+                "Lastanme" : "hgvhfg",
+                "Title" : "hjfgjh",
+                "Notes" : "fjghjhg"
+        },
+        "PaymentDate" : "20-03-2016",
+        "AccountNumber" : {
+                "AccountNumber" : 1,
+                "FirstName" : "fjjdsjg",
+                "LastName" : "hjdsfhs",
+                "PhoneNumber" : 765873465,
+                "EmergencyName" : "ghkjdfg",
+                "EmergencyNo" : 555,
+                "Notes" : "sdhfhjf"
+        },
+        "FirstDateOccupied" : "23-03-2016",
+        "LastDateOccupied" : "25-03-2016",
+        "TotalDays" : 3,
+        "AmountCharged" : 500,
+        "TaxRate" : 25,
+        "TaxAmount" : 30,
+        "PaymentTotal" : 530,
+        "Notes" : "kdhfkjd"
+}
+{
+        "_id" : ObjectId("5f08991477388a80967b9adf"),
+        "EmployeeId" : {
+                "Firstname" : "dfhgjhdf",
+                "Lastname" : "dshfjdh",
+                "Title" : "hfghdg",
+                "Notes" : "jsdfhjdhf"
+        },
+        "PaymentDate" : "09-08-2009",
+        "AccountNumber" : {
+                "AccountNumber" : 2,
+                "FirstName" : "fjjsjg",
+                "LastName" : "hdsfhs",
+                "PhoneNumber" : 765873,
+                "EmergencyName" : "ghkjfg",
+                "EmergencyNo" : 655,
+                "Notes" : "sdhfhjf"
+        },
+        "FirstDateOccupied" : "09-08-2009",
+        "LastDateOccupied" : "11-08-2009",
+        "TotalDays" : 3,
+        "AmountCharged" : 600,
+        "TaxRate" : 30,
+        "TaxAmount" : 60,
+        "PaymentTotal" : 660,
+        "Notes" : "sjgfjd"
+}
+{
+        "_id" : ObjectId("5f08991477388a80967b9ae0"),
+        "EmployeeId" : {
+                "Firstname" : "jhvhjf",
+                "Lastanme" : "hgvhfg",
+                "Title" : "hjfgjh",
+                "Notes" : "fjghjhg"
+        },
+        "PaymentDate" : "09-09-2009",
+        "AccountNumber" : {
+                "AccountNumber" : 3,
+                "FirstName" : "jdsjg",
+                "LastName" : "dsfhs",
+                "PhoneNumber" : 5873465,
+                "EmergencyName" : "ghkjdfg",
+                "EmergencyNo" : 666,
+                "Notes" : "sdhfhjf"
+        },
+        "FirstDateOccupied" : "10-09-2009",
+        "LastDateOccupied" : "11-09-2009",
+        "TotalDays" : 2,
+        "AmountCharged" : 300,
+        "TaxRate" : 20,
+        "TaxAmount" : 40,
+        "PaymentTotal" : 340,
+        "Notes" : "djhkjhgkd"
+}
+
+--------------Creation of collection Occupancies-----------------
+
+ db.createCollection('Occupancies')
+{ "ok" : 1 }
+
+----------------------------------------------------------------
+
+---------------------------Insertion into Occupancies-------------
+
+ db.Occupancies.insertMany([
+... {
+... EmployeeId:
+... {
+...  Firstname:'jhvhjf',
+...  Lastanme:'hgvhfg',
+...  Title:'hjfgjh',
+...  Notes:'fjghjhg'
+... },
+... DateOccupied:'09-09-2009',
+... AccountNumber:
+... {
+...  AccountNumber:1,
+...  FirstName:'fjjdsjg',
+...  LastName:'hjdsfhs',
+...  PhoneNumber:765873465,
+...  EmergencyName:'ghkjdfg',
+...  EmergencyNo:555,
+...  Notes:'sdhfhjf'
+... },
+... RoomNumber:
+... {
+...  RoomNumber:1,
+...  RoomType:'single',
+...  BedType:'baby',
+...  Rate:560,
+...  RoomStatus:'available',
+...  Notes:'sdjfjkds'
+... },
+... RateApplied:456,
+... PhoneCharge:45,
+... Notes:'sdfj'
+... },
+...
+... {
+... EmployeeId:
+... {
+...  Firstname:'dfhgjhdf',
+...  Lastname:'dshfjdh',
+...  Title:'hfghdg',
+...  Notes:'jsdfhjdhf'
+... },
+... DateOccupied:'09-09-2009',
+... AccountNumber:
+... {
+...  AccountNumber:2,
+...  FirstName:'fjjsjg',
+...  LastName:'hdsfhs',
+...  PhoneNumber:765873,
+...  EmergencyName:'ghkjfg',
+...  EmergencyNo:655,
+...  Notes:'sdhfhjf'
+... },
+... RoomNumber:
+... {
+...  RoomNumber:2,
+...  RoomType:'double',
+...  BedType:'king',
+...  Rate:500,
+...  RoomStatus:'occupied',
+...  Notes:'jhfjhd'
+... },
+... RateApplied:4446,
+... PhoneCharge:454,
+... Notes:'sdfj'
+... },
+...
+... {
+... EmployeeId:
+... {
+...  Firstname:'dfhgjhdf',
+...  Lastname:'dshfjdh',
+...  Title:'hfghdg',
+...  Notes:'jsdfhjdhf'
+... },
+... DateOccupied:'09-09-2009',
+... AccountNumber:
+... {
+...  AccountNumber:2,
+...  FirstName:'fjjsjg',
+...  LastName:'hdsfhs',
+...  PhoneNumber:765873,
+...  EmergencyName:'ghkjfg',
+...  EmergencyNo:655,
+...  Notes:'sdhfhjf'
+... },
+... RoomNumber:
+... {
+...  RoomNumber:3,
+...  RoomType:'double',
+...  BedType:'king',
+...  Rate:500,
+...  RoomStatus:'occupied',
+...  Notes:'jhfjhd'
+... },
+... RateApplied:4446,
+... PhoneCharge:454,
+... Notes:'sdfj'
+... }
+... ])
+
+---------------------------------------------------------------
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("5f089c6977388a80967b9ae1"),
+                ObjectId("5f089c6977388a80967b9ae2"),
+                ObjectId("5f089c6977388a80967b9ae3")
+        ]
+}
+
+------------------------------------------------------------------
+
+-------------------------Displaying the contents of Occupancies------
+
+ db.Occupancies.find().pretty()
+{
+        "_id" : ObjectId("5f089c6977388a80967b9ae1"),
+        "EmployeeId" : {
+                "Firstname" : "jhvhjf",
+                "Lastanme" : "hgvhfg",
+                "Title" : "hjfgjh",
+                "Notes" : "fjghjhg"
+        },
+        "DateOccupied" : "09-09-2009",
+        "AccountNumber" : {
+                "AccountNumber" : 1,
+                "FirstName" : "fjjdsjg",
+                "LastName" : "hjdsfhs",
+                "PhoneNumber" : 765873465,
+                "EmergencyName" : "ghkjdfg",
+                "EmergencyNo" : 555,
+                "Notes" : "sdhfhjf"
+        },
+        "RoomNumber" : {
+                "RoomNumber" : 1,
+                "RoomType" : "single",
+                "BedType" : "baby",
+                "Rate" : 560,
+                "RoomStatus" : "available",
+                "Notes" : "sdjfjkds"
+        },
+        "RateApplied" : 456,
+        "PhoneCharge" : 45,
+        "Notes" : "sdfj"
+}
+{
+        "_id" : ObjectId("5f089c6977388a80967b9ae2"),
+        "EmployeeId" : {
+                "Firstname" : "dfhgjhdf",
+                "Lastname" : "dshfjdh",
+                "Title" : "hfghdg",
+                "Notes" : "jsdfhjdhf"
+        },
+        "DateOccupied" : "09-09-2009",
+        "AccountNumber" : {
+                "AccountNumber" : 2,
+                "FirstName" : "fjjsjg",
+                "LastName" : "hdsfhs",
+                "PhoneNumber" : 765873,
+                "EmergencyName" : "ghkjfg",
+                "EmergencyNo" : 655,
+                "Notes" : "sdhfhjf"
+        },
+        "RoomNumber" : {
+                "RoomNumber" : 2,
+                "RoomType" : "double",
+                "BedType" : "king",
+                "Rate" : 500,
+                "RoomStatus" : "occupied",
+                "Notes" : "jhfjhd"
+        },
+        "RateApplied" : 4446,
+        "PhoneCharge" : 454,
+        "Notes" : "sdfj"
+}
+{
+        "_id" : ObjectId("5f089c6977388a80967b9ae3"),
+        "EmployeeId" : {
+                "Firstname" : "dfhgjhdf",
+                "Lastname" : "dshfjdh",
+                "Title" : "hfghdg",
+                "Notes" : "jsdfhjdhf"
+        },
+        "DateOccupied" : "09-09-2009",
+        "AccountNumber" : {
+                "AccountNumber" : 2,
+                "FirstName" : "fjjsjg",
+                "LastName" : "hdsfhs",
+                "PhoneNumber" : 765873,
+                "EmergencyName" : "ghkjfg",
+                "EmergencyNo" : 655,
+                "Notes" : "sdhfhjf"
+        },
+        "RoomNumber" : {
+                "RoomNumber" : 3,
+                "RoomType" : "double",
+                "BedType" : "king",
+                "Rate" : 500,
+                "RoomStatus" : "occupied",
+                "Notes" : "jhfjhd"
+        },
+        "RateApplied" : 4446,
+        "PhoneCharge" : 454,
+        "Notes" : "sdfj"
